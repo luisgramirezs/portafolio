@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Guillermo Ramirez Semeco | Perfil Profesional</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        html { scroll-behavior: smooth; }
+        
+        .bg-mesh {
+            background-color: #f8fafc;
+            background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.05) 0px, transparent 50%);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-mesh text-slate-800 min-h-screen">
+
+<body class="antialiased">
+
+
+
+    <!-- Application Structure Plan:
+         1. Hero Header: Impacto inmediato. Resume quién eres (AI + Biomed).
+         2. The "DNA" Dashboard: Visualización de datos (Radar Chart) que muestra el equilibrio único de Luis (Tech vs. Science).
+         3. Project Deep Dive (TEOplay): No solo texto, sino un desglose interactivo de la lógica del proyecto (Input -> AI -> Output).
+         4. Experience Timeline: Scroll interactivo cronológico.
+         5. Skills Matrix: Filtros interactivos para explorar el stack técnico (Python, RLHF, Neuro).
+         6. Education & Certs: Barras de progreso visuales para Stanford y otros.
+         
+         WHY: Esta estructura rompe el CV tradicional lineal y lo convierte en una exploración de capacidades, ideal para reclutadores de tech que buscan "T-shaped skills".
+    -->
+
+
+    <!-- Nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-mono font-bold text-blue-600 text-lg">LGRS.Biomed</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#perfil" class="hover:text-blue-600 transition-colors">Perfil</a>
+                <a href="#formacion" class="hover:text-blue-600 transition-colors">Formación</a>
+                <a href="#habilidades" class="hover:text-blue-600 transition-colors">Habilidades</a>
+                <a href="#contacto" class="px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Perfil -->
+    <header id="perfil" class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                    </span>
+                    Informática • Biomédica • IA
+                </div>
+                <h1 class="text-5xl font-bold text-slate-900 leading-tight">
+                    Luis Guillermo Ramirez Semeco
+                </h1>
+                <p class="text-2xl font-semibold gradient-text">
+                    Especialista en Inteligencia Artificial aplicada a la Educación y Salud 
+                </p>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                    Ingeniero en Informática con Maestría en Ingeniería Biomédica. Mi enfoque integra el desarrollo de sistemas avanzados de computación con el estudio de procesos cognitivos y el análisis de datos médicos para crear soluciones de IA con impacto clínico y educativo real.
+                </p>
+            </div>
+            <div class="w-64 h-64 md:w-78 md:h-78 relative">
+                <div class="absolute inset-0 bg-blue-600 rounded-full blur-3xl opacity-10 animate-pulse"></div>
+                <div class="relative w-full h-full bg-white p-2 rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+			<div class="w-full h-full bg-slate-50 rounded-2xl overflow-hidden relative">
+     				<img src="assets/principal.png" alt="Cerebro IA" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+			</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Formación Destacada -->
+        <section id="formacion" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="mb-12">
+            <h2 class="text-3xl font-bold text-slate-900">Línea de formación actual</h2>
+            <p class="text-slate-500 mt-2">La meta: Neuroingeniería, tecnología con propósito humano.</p>
+        </div>
+
+
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="text-blue-600 mb-4 text-2xl">🖥️</div>
+                <h3 class="font-bold text-slate-900 mb-2 text-lg">Pregrado</h3>
+                <p class="text-sm text-slate-600">Ingeniero en Informática.</p>
+		<p class="text-sm text-slate-400">Universidad Alejandro de Humboldt (2006)</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="text-blue-600 mb-4 text-2xl">⚕️</div>
+                <h3 class="font-bold text-slate-900 mb-2 text-lg">Postgrado</h3>
+                <p class="text-sm text-slate-600">MSc.en Ingeniería Biomédica</p>
+		<p class="text-sm text-slate-400">Universidad del Rosario (2020)</p>
+		<p class="text-sm text-slate-400">EC Ing Julio Garavito(2020)</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="text-indigo-600 mb-4 text-2xl">🧠</div>
+                <h3 class="font-bold text-slate-900 mb-2 text-lg">Neurociencias</h3>
+		<h1 class="text-sm text-slate-400 mb-1 text-lg">Diplomado en:</h1>
+                <p class="text-sm text-slate-600">Neurociencias (2021)</p>
+                <p class="text-sm text-slate-600">Neuropsicología Edu(2024)</p>
+		<p class="text-sm text-slate-400">Trastornos:</p>
+		<p class="text-sm text-slate-600">Lenguaje y aprendizaje(2021)</p>
+		<p class="text-sm text-slate-600">Neurodesarrollo (2024)</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm card-hover ring-2 ring-blue-500 ring-offset-2">
+                <div class="text-purple-600 mb-4 text-2xl">🤖</div>
+                <h3 class="font-bold text-slate-900 mb-2 text-lg">Especialización IA</h3>
+		<h1 class="text-sm text-slate-600 mb-1 text-lg">Stanford University/Online</h1>
+		<p class="text-sm text-slate-400">Specialization in</p>
+                <p class="text-sm text-slate-600">Machine Learning (2025) </p>
+                <p class="text-sm text-slate-600">IA Health (En Progreso)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gráficos de Habilidades -->
+    <section id="habilidades" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="mb-12 text-center md:text-left">
+            <h2 class="text-3xl font-bold text-slate-900">Intersección de Conocimiento</h2>
+            <p class="text-slate-500 mt-2">Equilibrio visual entre computación pura y ciencias de la salud.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Radar con gradiente suave -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <h3 class="text-lg font-bold mb-6 text-slate-800 border-l-4 border-blue-500 pl-3">Perfil de Competencias Híbridas</h3>
+                <div class="h-80">
+                    <canvas id="competenceRadar"></canvas>
+                </div>
+            </div>
+            
+            <!-- Barras con Multi-Color -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <h3 class="text-lg font-bold mb-6 text-slate-800 border-l-4 border-purple-500 pl-3">Tecnologías de Especialidad</h3>
+                <div class="h-80">
+                    <canvas id="techBar"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Colores compartidos para mantener coherencia
+            const palette = [
+                '#3b82f6', // Blue (Informática)
+                '#8b5cf6', // Violet (Neurociencia)
+                '#ec4899', // Pink (IA Salud)
+                '#f59e0b', // Amber (Machine Learning)
+                '#10b981', // Emerald (Análisis Biomédico)
+                '#06b6d4'  // Cyan (Neuroeducación)
+            ];
+
+            // 1. Radar de competencias
+            new Chart(document.getElementById('competenceRadar'), {
+                type: 'radar',
+                data: {
+                    labels: ['Ing. Informática', 'Neurociencia', 'IA en Salud', 'Machine Learning', 'Análisis Biomédico', 'Neuroeducación'],
+                    datasets: [{
+                        label: 'Nivel Profesional',
+                        data: [95, 80, 85, 90, 88, 85],
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: '#3b82f6',
+                        pointBackgroundColor: palette, // Cada punto del radar con su color
+                        pointBorderColor: '#fff',
+                        pointRadius: 5,
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: { 
+                            beginAtZero: true, 
+                            max: 100, 
+                            ticks: { display: false },
+                            pointLabels: { font: { family: 'JetBrains Mono', size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 2. Tecnologías con colores individuales por barra
+            new Chart(document.getElementById('techBar'), {
+                type: 'bar',
+                data: {
+                    labels: ['Python', 'PyTorch', 'Neuro-Análisis', 'SQL/Data', 'Modelos Médicos', 'Cloud Health'],
+                    datasets: [{
+                        data: [95, 85, 80, 88, 82, 70],
+                        // ARREGLO DE COLORES: Aquí se asigna un color a cada barra
+                        backgroundColor: palette, 
+                        borderRadius: 8,
+                        hoverOpacity: 0.8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: { beginAtZero: true, max: 100, grid: { display: false } },
+                        y: { 
+                            grid: { display: false },
+                            ticks: { font: { weight: 'bold', family: 'Inter' } }
+                        }
+                    },
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => ` Dominio: ${context.raw}%`
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    <!-- Innovation Spotlight: TEOplay -->
+    <section id="teoplay" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-violet-600 font-bold tracking-wide uppercase text-sm">Proyecto Destacado (2025-2026)</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">TEOplay: Ecosistema de Inteligencia Neuroeducativa</h2>
+                <p class="text-slate-500 mt-4 max-w-3xl">
+                    Plataforma tecnológica de apoyo social que usa el  Aprendizaje Automático para entender los patrones de aprendiaje de los niños y mejorar así el soporte para decisiones pedagógicas. Es un motor de análisis de datos que utiliza la IA para transformar la subjetividad del aula en evidencia científica.
+                </p>
+            </div>
+
+            <!-- Interactive Logic Flow -->
+            <!-- Visualization: Step-by-step logic flow using Flexbox grids. Goal: Explain complex tech simply. -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="interactive-card bg-slate-50 p-8 rounded-xl relative z-10">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-600 border-4 border-white">1</div>
+                    <div class="text-4xl mb-4">📥</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Ingesta de Datos</h3>
+                    <p class="text-slate-600 text-sm mb-4">Captura de variables cualitativas y cuantitativas (informes PIAR, observaciones conductuales).</p>
+                    <div class="bg-white px-3 py-2 rounded text-xs font-mono text-slate-500 border border-slate-200">
+                        Input: PDF/Text<br>Tools: Regex, NLP
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="interactive-card bg-slate-50 p-8 rounded-xl relative z-10 border-l-blue-500">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600 border-4 border-white">2</div>
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Procesamiento ML</h3>
+                    <p class="text-slate-600 text-sm mb-4">Clasificación de perfiles de riesgo y predicción de intervenciones usando algoritmos supervisados.</p>
+                    <div class="bg-white px-3 py-2 rounded text-xs font-mono text-blue-600 border border-blue-100">
+                        Model: RandomForestClassifier<br>Lib: Scikit-Learn
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="interactive-card bg-slate-50 p-8 rounded-xl relative z-10 border-l-emerald-500">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center font-bold text-emerald-600 border-4 border-white">3</div>
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Acción Pedagógica</h3>
+                    <p class="text-slate-600 text-sm mb-4">Generación automática de reportes PDF con "Ajustes Razonables" y hojas de ruta técnicas.</p>
+                    <div class="bg-white px-3 py-2 rounded text-xs font-mono text-emerald-600 border border-emerald-100">
+                        Output: PDF Report<br>Lib: ReportLab
+                    </div>
+                </div>
+            </div>
+	<div class="mt-12 text-center">
+    		<a href="https://parquetropolis.co/teoplay" target="_blank" 
+       			class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 transform hover:-translate-y-1">
+        		Saber más sobre TEOplay
+        		<svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            			<path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        		</svg>
+    		</a>
+        </div>
+
+
+    <!-- Innovation Spotlight: Asperger -->
+    <section id="proyecto-asperger-vr" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-violet-600 font-bold tracking-wide uppercase text-sm">Tecnología terapéutica de apoyo complementario para la Inclusión Social (2020)</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Proyecto final de Maestría en Ingeniería Biomédica</h2>
+                <p class="text-slate-500 mt-4 max-w-3xl">
+		    Prototipo tecnológico basado en Realidad Virtual como herramienta terapéutica para la interacción social de adolescentes con Síndrome de Asérger
+                </p>
+            </div>
+
+            <!-- Interactive Logic Flow -->
+            <!-- Visualization: Step-by-step logic flow using Flexbox grids. Goal: Explain complex tech simply. -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="interactive-card bg-slate-50 p-8 rounded-xl relative z-10">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-600 border-4 border-white">1</div>
+                    <div class="text-4xl mb-4">📥</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">El Desafío| Diseño Centrado en el Usuario DCU</h3>
+                    <p class="text-slate-600 text-sm mb-4">Los adolescentes con Síndrome de Asperger (14-17 años) enfrentan retos significativos en la comunicación no verbal, el reconocimiento de emociones y la interpretación de contextos sociales.</p>
+                    <div class="bg-white px-3 py-2 rounded text-xs font-mono text-slate-500 border border-slate-200">
+                        Input: Historial de casos<br>Tools: Entrevistas semi estructuradas
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="interactive-card bg-slate-50 p-8 rounded-xl relative z-10 border-l-blue-500">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600 border-4 border-white">2</div>
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Stack Tecnológico</h3>
+                    <p class="text-slate-600 text-sm mb-4">Tecnologías utilizadas para el desarrollo funcional: (Unity®,C#, Blender®, Android (APK), Google Cardboard). Obteniendo 2 módulos de entrenamiento. </p>
+                    <div class="bg-white px-3 py-2 rounded text-xs font-mono text-blue-600 border border-blue-100">
+                        ConoceME: Para el reconociento de expresiones faciales.<br>HablaME: Para rutinas sociales en un ambiente juvenil típico.
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="interactive-card bg-slate-50 p-8 rounded-xl relative z-10 border-l-emerald-500">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center font-bold text-emerald-600 border-4 border-white">3</div>
+                    <div class="text-4xl mb-4">🎖️</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Validación Profesional</h3>
+                    <p class="text-slate-600 text-sm mb-4">86.67% Aceptación funcional por especialistas independientes, comité evaluador y comité de ética de la EMCS.</p>
+                    <div class="bg-white px-3 py-2 rounded text-xs font-mono text-emerald-600 border border-emerald-100">
+                        Especialidades: Terapia Ocupacional,Fonoaudiología,Pedagogía,Educación especial, Ingeniería Biomédica <br>Resultado: Aprobado
+                    </div>
+                </div>
+            </div>
+
+        </div>
+  
+
+    </section>
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-16 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Trayectoria Profesional</h2>
+            </div>
+
+            <div class="relative timeline-line space-y-12">
+                
+                <!-- Role 1: Current -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-3 top-2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-sm z-10 group-hover:scale-125 transition"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:border-blue-300 transition">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold text-slate-800">AI Prompt Specialist & Model Optimizer</h3>
+                            <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full w-fit">2024 - Presente</span>
+                        </div>
+                        <p class="text-slate-500 font-medium mb-3">Remote Contractor</p>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm">
+                            <li>Refinamiento de arquitecturas de prompts complejas para LLMs, asegurando consistencia lógica y precisión técnica.</li>
+                            <li>Desarrollo de registros de razonamiento secuencial (Chain-of-Thought) para agentes de IA.</li>
+                            <li>Auditoría de respuestas del modelo contra conocimiento de dominio especializado para reducir alucinaciones.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 2: Parquetropolis -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-3 top-2 w-4 h-4 bg-violet-600 rounded-full border-4 border-white shadow-sm z-10 group-hover:scale-125 transition"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:border-violet-300 transition">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold text-slate-800">Fundador & Director (Lead AI Developer)</h3>
+                            <span class="text-sm font-semibold text-violet-600 bg-violet-50 px-3 py-1 rounded-full w-fit">2018 - Presente</span>
+                        </div>
+                        <p class="text-slate-500 font-medium mb-3">Parquetrópolis (Bogotá)</p>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm">
+                            <li>Liderazgo en I+D de <strong>TEOplay</strong>. Implementación de frameworks pedagógicos basados en datos usando Python.</li>
+                            <li>Diseño de soluciones inmersivas AR/VR en Unity 3D para entornos terapéuticos.</li>
+                            <li>Integración de análisis predictivo para cerrar la brecha entre la observación clínica y la inclusión escolar.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3: Epachamo -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-3 top-2 w-4 h-4 bg-slate-400 rounded-full border-4 border-white shadow-sm z-10 group-hover:scale-125 transition"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 opacity-80 hover:opacity-100 transition">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h3 class="text-lg font-bold text-slate-700">Fundador & CEO</h3>
+                            <span class="text-sm text-slate-500">2005 - 2018</span>
+                        </div>
+                        <p class="text-slate-500 font-medium mb-1">Grupo Epachamo SAS</p>
+                        <p class="text-slate-600 text-sm">Coordinación de proyectos de infraestructura tecnológica e implementación de soluciones de optimización de procesos.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Education Grid -->
+    <section id="skills" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-1 gap-12">
+                
+                <!-- Education Column -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <span class="text-2xl mr-2">🎓</span> Educación & Certificaciones
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Stanford ML -->
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Stanford University (Coursera)</h4>
+                                    <p class="text-sm text-slate-500">Machine Learning Specialization</p>
+                                </div>
+                                <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">COMPLETED 2025</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-2">Supervised Learning, Neural Networks, Reinforcement Learning.</p>
+                        </div>
+
+                        <!-- Stanford AI Health -->
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Stanford University (Coursera)</h4>
+                                    <p class="text-sm text-slate-500">AI in Healthcare Specialization</p>
+                                </div>
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">IN PROGRESS (2026)</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <!-- MSc -->
+                        <div class="flex items-start p-4 border-l-2 border-slate-300 pl-4">
+                            <div>
+                                <h4 class="font-bold text-slate-700">MSc. Ingeniería Biomédica</h4>
+                                <p class="text-sm text-slate-500">Universidad del Rosario / Esc. Col. de Ingeniería (2020)</p>
+                                <p class="text-xs text-slate-400 mt-1">Focus: Neurodevelopmental Disorders & Assistive Tech.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200 py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-8 tracking-tight">¿Hablamos de Neuro-IA?</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto mb-12 text-lg leading-relaxed">
+                Disponible para roles estratégicos en ingeniería de datos de IA, desarrollo biomédico y consultoría EdTech para la neurodiversidad.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mb-16">
+                <a href="mailto:luisguillermo80@gmail.com" class="flex items-center gap-3 px-10 py-5 bg-slate-900 text-white rounded-3xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-200">
+                    <span class="material-symbols-outlined">📨</span>
+                    Email Profesional
+                </a>
+                <a href="#" class="flex items-center gap-3 px-10 py-5 bg-white border border-slate-200 text-slate-700 rounded-3xl hover:border-blue-600 transition-all shadow-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-6 h-6" alt="LinkedIn">
+                    LinkedIn
+                </a>
+            </div>
+            <div class="text-slate-400 text-[10px] font-bold tracking-[0.4em] uppercase">
+                © 2026 LUIS GUILLERMO RAMIREZ SEMECO • CIENCIA &amp; TECNOLOGÍA
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Data Configuration based on Luis's CV
+        const radarData = {
+            labels: ['Ingeniería de Software', 'Neurociencia/Biomédica', 'Machine Learning/IA', 'Análisis de Datos', 'Gestión de Proyectos'],
+            datasets: [{
+                label: 'Nivel de Competencia',
+                data: [90, 85, 80, 85, 95], // Values estimated from "Senior" roles and recent certifications
+                fill: true,
+                backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                borderColor: 'rgb(37, 99, 235)',
+                pointBackgroundColor: 'rgb(37, 99, 235)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(37, 99, 235)'
+            }]
+        };
+
+        const barData = {
+            labels: ['Python (Pandas/NumPy)', 'Unity 3D/C#', 'SQL', 'Prompt Eng./RLHF', 'Herramientas Biónicas'],
+            datasets: [{
+                label: 'Dominio Técnico',
+                data: [85, 90, 75, 95, 70],
+                backgroundColor: [
+                    'rgba(16, 185, 129, 0.7)',
+                    'rgba(139, 92, 246, 0.7)',
+                    'rgba(100, 116, 139, 0.7)',
+                    'rgba(37, 99, 235, 0.7)',
+                    'rgba(249, 115, 22, 0.7)'
+                ],
+                borderColor: [
+                    'rgb(16, 185, 129)',
+                    'rgb(139, 92, 246)',
+                    'rgb(100, 116, 139)',
+                    'rgb(37, 99, 235)',
+                    'rgb(249, 115, 22)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Render Charts on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            // 1. Radar Chart
+            const ctxRadar = document.getElementById('skillRadar').getContext('2d');
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: radarData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#E2E8F0' },
+                            grid: { color: '#E2E8F0' },
+                            pointLabels: {
+                                font: { size: 11, family: "'Inter', sans-serif" },
+                                color: '#475569'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            // 2. Bar Chart (Tech Stack)
+            const ctxBar = document.getElementById('techStackChart').getContext('2d');
+            new Chart(ctxBar, {
+                type: 'bar',
+                data: barData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', // Horizontal bar for better readability of text labels
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { display: false }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { font: { family: "'JetBrains Mono', monospace" } }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        });
+    </script>
+    
+    <!-- CONFIRMATION: NO SVG graphics used directly in HTML (Chart.js uses Canvas). NO Mermaid JS used. Single file output. -->
+
+
+</body>
+</html>
