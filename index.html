@@ -60,7 +60,7 @@
         </div>
     </nav>
 
-    <!-- Hero / Perfil -->
+    <!-- 1 Hero / Perfil -->
     <header id="perfil" class="max-w-6xl mx-auto px-6 pt-20 pb-16">
         <div class="flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1 space-y-6">
@@ -96,7 +96,7 @@
         </div>
     </header>
 
-    <!-- Sección Formación Destacada -->
+    <!-- 2 Sección Formación Destacada -->
         <section id="formacion" class="max-w-6xl mx-auto px-6 py-12">
         <div class="mb-12">
             <h2 class="text-3xl font-bold text-slate-900">Ruta de formación</h2>
@@ -134,146 +134,179 @@
                 <h3 class="font-bold text-slate-900 mb-2 text-lg">IA & Machine Learning</h3>
 		        <h1 class="text-sm text-slate-600 mb-1 text-lg">Línea de especialización:</h1>
                     <p class="text-sm text-slate-400">Stanford University (Coursera - Online):</p>
-                    <p class="text-sm text-slate-600">Machine Learning (2025) </p>
+                    <p class="text-sm text-slate-600">Machine Learning Specialization (2025) </p>
                     <p class="text-sm text-slate-400">DeepLearning.AI:</p>
-                    <p class="text-sm text-slate-600">AI in Medicine (In Progress)</p>
+                    <p class="text-sm text-slate-600">AI for Medicine Specialization (In Progress)</p>
             </div>
         </div>
     </section>
 
-    <!-- Gráficos de Habilidades -->
+    
+    <!-- 3. Conocimientos y aplicación -->
     <section id="habilidades" class="max-w-6xl mx-auto px-6 py-20">
+
         <div class="mb-12 text-center md:text-left">
-            <h2 class="text-3xl font-bold text-slate-900">Knowledge Intersection</h2>
-            <p class="text-slate-500 mt-2">Bridging the gap between Computer Science and Healthcare.</p>
+            <h2 class="text-3xl font-bold text-slate-900">
+                Conocimientos y aplicación
+            </h2>
+            <p class="text-slate-500 mt-2">
+                Integración de conocimientos tecnológicos, biomédicos y neurocientíficos en el desarrollo de soluciones aplicadas.
+            </p>
         </div>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Radar con gradiente suave -->
-            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-                <h3 class="text-lg font-bold mb-6 text-slate-800 border-l-4 border-blue-500 pl-3">Hybrid Core Competencies</h3>
-                <div class="h-80">
-                    <canvas id="competenceRadar"></canvas>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- 3.1. Inteligencia Artificial y Machine Learning -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="text-blue-600 text-2xl">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">
+                        Inteligencia Artificial y Machine Learning
+                    </h3>
                 </div>
-            </div>
-            
-            <!-- Barras con Multi-Color -->
-            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-                <h3 class="text-lg font-bold mb-6 text-slate-800 border-l-4 border-purple-500 pl-3">Technology skills </h3>
-                <div class="h-80">
-                    <canvas id="techBar"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Colores compartidos para mantener coherencia
-            const palette = [
-                '#3b82f6', // Blue (Software Engineering)
-                '#8b5cf6', // Violet (Neurocience)
-		'#FFD700', // Yellow (LLM & Prompt Engineering)
-                '#ec4899', // Pink (AI in Healthcare)
-                '#f59e0b', // Amber (Machine Learning)
-                '#10b981', // Emerald (Biomedical Analysis)
-                '#06b6d4'  // Cyan (Neuroeducation)
-            ];
-
-            // 1. Radar de competencias
-            new Chart(document.getElementById('competenceRadar'), {
-                type: 'radar',
-                data: {
-                    labels: ['Software Engineering', 'Neurocience', 'LLM & Prompt Engineering', 'AI in Healthcare', 'Machine Learning', 'Biomedical Analysis', 'Neuroeducation'],
-                    datasets: [{
-                        label: 'Expertise Level',
-                        data: [95, 80, 85, 90, 88, 85, 85],
-                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                        borderColor: '#3b82f6',
-                        pointBackgroundColor: palette, // Cada punto del radar con su color
-                        pointBorderColor: '#fff',
-                        pointRadius: 5,
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: { 
-                            beginAtZero: true, 
-                            max: 100, 
-                            ticks: { display: false },
-                            pointLabels: { font: { family: 'JetBrains Mono', size: 10 } }
-                        }
-                    }
-                }
-            });
-
-            // 2. Tecnologías con colores individuales por barra
-            new Chart(document.getElementById('techBar'), {
-                type: 'bar',
-                data: {
-                    labels: ['Python / Git / Architecture', 'EEG Analysis / Neuro-Analytics', 'OpenAI / LangChain / RAG', 'Medical Imaging / HIPAA AI', 'PyTorch / Scikit-Learn', 'Signal Processing / SQL', 'Unity 3D / VR Development'],
-                    datasets: [{
-                        data: [95, 80, 85, 90, 88, 85, 85],
-                        backgroundColor: palette, 
-                        borderRadius: 8,
-                        hoverOpacity: 0.8
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    indexAxis: 'y',
-                    scales: {
-                        x: { beginAtZero: true, max: 100, grid: { display: false } },
-                        y: { 
-                            grid: { display: false },
-                            ticks: { font: { weight: 'bold', family: 'Inter' } }
-                        }
-                    },
-                    plugins: { 
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: (context) => ` Dominio: ${context.raw}%`
-                            }
-                        }
-                    }
-                }
-            });
-        });
-    </script>
-
-
-    <!-- Innovation Spotlight: TEOplay -->
-
-    <!-- Projects Section -->
-    <section id="proyectos" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-
-            <!-- Section Header -->
-            <div class="text-center mb-14">
-                <span class="text-sm font-semibold tracking-widest uppercase text-indigo-600">
-                    Research & Development
-                </span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-                    Projects
-                </h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-                    Applied technology projects across healthcare, neuroeducation
-                    and assistive technology.
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    Implementación de modelos de aprendizaje automático para clasificación,
+                    predicción e identificación de patrones. Integración de modelos de IA
+                    generativa para el procesamiento e interpretación de información.
+                </p>
+                <p class="text-xs text-slate-500">
+                    <strong>Evidencia:</strong> TEOplay y Chest X-Ray Analysis.
                 </p>
             </div>
 
-            <!-- Main Project Categories -->
+            <!-- 3.2. Deep Learning y Computer Vision -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="text-purple-600 text-2xl">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">
+                        Deep Learning y Computer Vision
+                    </h3>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    Diseño, entrenamiento y evaluación de redes neuronales convolucionales
+                    (CNN), procesamiento de imágenes y desarrollo de modelos para
+                    validación y clasificación de imágenes médicas.
+                </p>
+                <p class="text-xs text-slate-500">
+                    <strong>Evidencia:</strong> Chest X-Ray Analysis.
+                </p>
+            </div>
+
+            <!-- 3.3. Ingeniería de Software y Desarrollo de Soluciones IA -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="text-indigo-600 text-2xl">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">
+                        Ingeniería de Software y Desarrollo de Soluciones IA
+                    </h3>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    Desarrollo de aplicaciones que integran modelos de IA, servicios
+                    externos y bases de datos. Implementación de APIs, servicios backend,
+                    interfaces web e integración y despliegue de soluciones tecnológicas.
+                </p>
+                <p class="text-xs text-slate-500">
+                    <strong>Tecnologías:</strong> Python, FastAPI, React, TypeScript y Firebase.
+                </p>
+            </div>
+
+            <!-- 3.4. Ingeniería Biomédica y Tecnología en Salud -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="text-emerald-600 text-2xl">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">
+                        Ingeniería Biomédica y Tecnología en Salud
+                    </h3>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    Aplicación de conocimientos de ingeniería al análisis de problemas
+                    biomédicos, tecnologías para la salud y procesamiento computacional
+                    de imágenes médicas.
+                </p>
+                <p class="text-xs text-slate-500">
+                    <strong>Evidencia:</strong> Formación en Ingeniería Biomédica y
+                    Chest X-Ray Analysis.
+                </p>
+            </div>
+
+            <!-- 3.5. Neurociencias y Neurodesarrollo -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="text-amber-600 text-2xl">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">
+                        Neurociencias y Neurodesarrollo
+                    </h3>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    Comprensión de fundamentos neurocientíficos relacionados con el
+                    aprendizaje, el desarrollo cognitivo y las condiciones del
+                    neurodesarrollo, aplicados al diseño de soluciones tecnológicas.
+                </p>
+                <p class="text-xs text-slate-500">
+                    <strong>Evidencia:</strong> Formación complementaria, proyecto académico HáblaME (VR) y TEOplay.
+                </p>
+            </div>
+
+            <!-- 3.6. Educación Inclusiva y Tecnologías de Asistencia -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm card-hover">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="text-pink-600 text-2xl">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">
+                        Neuroeducación y Tecnologías de Asistencia
+                    </h3>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    Diseño de soluciones tecnológicas orientadas a la accesibilidad,
+                    la participación y el aprendizaje, incorporando IA y los principios del
+                    Diseño Universal para el Aprendizaje (DUA).
+                </p>
+                <p class="text-xs text-slate-500">
+                    <strong>Evidencia:</strong> TEOplay, y proyecto académico HáblaME (VR).
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 4. Sección de proyectos -->
+
+    <section id="proyectos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Encabezado de sección -->
+            <div class="text-center mb-14">
+                <span class="text-sm font-semibold tracking-widest uppercase text-indigo-600">
+                    Investigación y Desarrollo
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
+                    Proyectos
+                </h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Proyectos tecnológicos aplicados a la salud, la neuroeducación
+                    y las tecnologías de asistencia.
+                </p>
+            </div>
+
+            <!-- Categorías principales -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                <!-- CATEGORY 1: NEUROEDUCATION -->
+                <!-- CATEGORÍA 1: NEUROEDUCACIÓN -->
                 <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
 
-                    <!-- Category Banner -->
+                    <!-- Banner de categoría -->
                     <div class="bg-gradient-to-r from-violet-700 to-indigo-600 p-6 text-white">
                         <div class="flex items-center gap-4">
                             <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -281,40 +314,41 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold">
-                                    AI Applied to Neuroeducation
+                                    IA aplicada a la Neuroeducación
                                 </h3>
                                 <p class="text-sm text-violet-100 mt-1">
-                                    Artificial intelligence and inclusive learning.
+                                    Inteligencia artificial y aprendizaje inclusivo.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Projects inside category -->
+                    <!-- Proyectos de la categoría -->
                     <div class="p-6">
 
                         <!-- TEOplay -->
                         <div class="flex flex-col sm:flex-row gap-5 items-start">
 
-                            <!-- Project Image -->
+                            <!-- Imagen del proyecto -->
                             <div class="w-full sm:w-32 h-40 sm:h-32 flex-shrink-0 rounded-xl overflow-hidden bg-violet-50">
                                 <img
                                     src="assets/teoplay.png"
-                                    alt="TEOplay project"
+                                    alt="Proyecto TEOplay"
                                     class="w-full h-full object-cover"
                                 />
                             </div>
 
-                            <!-- Project Information -->
+                            <!-- Información del proyecto -->
                             <div class="flex-1">
                                 <h4 class="text-lg font-bold text-gray-900">
                                     TEOplay
                                 </h4>
 
                                 <p class="text-sm text-gray-600 mt-2 leading-relaxed">
-                                    A neuroeducation platform that connects families,
-                                    schools and specialists to support educational
-                                    processes through technology and artificial intelligence.
+                                    Plataforma neuroeducativa que conecta a las familias,
+                                    las instituciones educativas y los especialistas para
+                                    acompañar los procesos de aprendizaje mediante tecnología
+                                    e Inteligencia Artificial.
                                 </p>
 
                                 <div class="flex flex-wrap gap-2 mt-3">
@@ -324,7 +358,7 @@
                                     <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">ReportLab</span>
                                     <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Joblib</span>
                                     <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Firebase</span>
-                                    <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Neuroeducation</span>
+                                    <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Neuroeducación</span>
                                 </div>
 
                                 <a
@@ -333,22 +367,21 @@
                                     rel="noopener noreferrer"
                                     class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-800"
                                 >
-                                    Explore project
+                                    Explorar proyecto
                                     <i class="fas fa-arrow-right text-xs"></i>
                                 </a>
                             </div>
                         </div>
 
-                        <!-- Future neuroeducation projects can be added here -->
+                        <!-- Espacio para futuros proyectos de neuroeducación -->
 
                     </div>
                 </div>
 
-
-                <!-- CATEGORY 2: MEDICINE -->
+                <!-- CATEGORÍA 2: MEDICINA -->
                 <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
 
-                    <!-- Category Banner -->
+                    <!-- Banner de categoría -->
                     <div class="bg-gradient-to-r from-blue-700 to-cyan-600 p-6 text-white">
                         <div class="flex items-center gap-4">
                             <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -356,40 +389,41 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold">
-                                    AI Applied to Medicine
+                                    IA aplicada a la Medicina
                                 </h3>
                                 <p class="text-sm text-blue-100 mt-1">
-                                    Artificial intelligence for healthcare applications.
+                                    Inteligencia artificial aplicada al ámbito de la salud.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Projects inside category -->
+                    <!-- Proyectos de la categoría -->
                     <div class="p-6">
 
                         <!-- Chest X-Ray Analysis -->
                         <div class="flex flex-col sm:flex-row gap-5 items-start">
 
-                            <!-- Project Image -->
+                            <!-- Imagen del proyecto -->
                             <div class="w-full sm:w-32 h-40 sm:h-32 flex-shrink-0 rounded-xl overflow-hidden bg-blue-50">
                                 <img
                                     src="assets/Rx.jpg"
-                                    alt="Chest X-Ray Analysis project"
+                                    alt="Proyecto Chest X-Ray Analysis"
                                     class="w-full h-full object-cover"
                                 />
                             </div>
 
-                            <!-- Project Information -->
+                            <!-- Información del proyecto -->
                             <div class="flex-1">
                                 <h4 class="text-lg font-bold text-gray-900">
                                     Chest X-Ray Analysis
                                 </h4>
 
                                 <p class="text-sm text-gray-600 mt-2 leading-relaxed">
-                                    An AI-based system that validates chest X-ray
-                                    images and classifies them into Normal and
-                                    Pneumonia categories using convolutional neural networks.
+                                    Sistema basado en Inteligencia Artificial que valida
+                                    imágenes radiográficas de tórax y las clasifica en
+                                    las categorías Normal y Neumonía mediante redes
+                                    neuronales convolucionales.
                                 </p>
 
                                 <div class="flex flex-wrap gap-2 mt-3">
@@ -406,24 +440,23 @@
                                     rel="noopener noreferrer"
                                     class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-blue-600 hover:text-blue-800"
                                 >
-                                    Explore project
+                                    Explorar proyecto
                                     <i class="fas fa-arrow-right text-xs"></i>
                                 </a>
                             </div>
                         </div>
 
-                        <!-- Future medical AI projects can be added here -->
+                        <!-- Espacio para futuros proyectos de IA aplicada a Medicina -->
 
                     </div>
                 </div>
 
             </div>
 
-
-            <!-- CATEGORY 3: ASSISTIVE TECHNOLOGY -->
+            <!-- CATEGORÍA 3: TECNOLOGÍAS DE ASISTENCIA -->
             <div class="mt-10 bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
 
-                <!-- Category Banner -->
+                <!-- Banner de categoría -->
                 <div class="bg-gradient-to-r from-teal-700 to-emerald-600 p-6 text-white">
                     <div class="flex items-center gap-4">
                         <div class="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -431,47 +464,48 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-bold">
-                                Assistive Technology
+                                Tecnologías de Asistencia
                             </h3>
                             <p class="text-sm text-teal-100 mt-1">
-                                Technology designed to support accessibility and inclusion.
+                                Tecnología orientada a promover la accesibilidad y la inclusión.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project -->
+                <!-- Proyecto -->
                 <div class="p-6 md:p-8">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
 
-                        <!-- Project Image -->
+                        <!-- Imagen del proyecto -->
                         <div class="md:col-span-1 h-56 rounded-xl overflow-hidden bg-teal-50">
                             <img
                                 src="assets/hb.png"
-                                alt="Virtual reality project for social skills development"
+                                alt="Proyecto de realidad virtual para el desarrollo de habilidades sociales"
                                 class="w-full h-full object-cover"
                             />
                         </div>
 
-                        <!-- Project Information -->
+                        <!-- Información del proyecto -->
                         <div class="md:col-span-2">
                             <h4 class="text-xl font-bold text-gray-900">
-                                Virtual Reality for Social Skills Development
+                                Realidad Virtual para el Desarrollo de Habilidades Sociales
                             </h4>
 
                             <p class="text-sm text-gray-600 mt-3 leading-relaxed">
-                                Master's thesis project exploring virtual reality
-                                as a complementary technological resource to support
-                                social skills development in young people aged 14–17
-                                diagnosed with Asperger's syndrome.
+                                Proyecto de trabajo de grado de maestría que explora
+                                la realidad virtual como recurso tecnológico complementario
+                                para apoyar el desarrollo de habilidades sociales en
+                                jóvenes de 14 a 17 años con diagnóstico de síndrome
+                                de Asperger.
                             </p>
 
                             <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Virtual Reality</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Realidad Virtual</span>
                                 <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Unity 3D</span>
                                 <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">C#</span>
                                 <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Blender</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Biomedical Engineering</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Ingeniería Biomédica</span>
                             </div>
 
                             <a
@@ -480,7 +514,7 @@
                                 rel="noopener noreferrer"
                                 class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-teal-700 hover:text-teal-900"
                             >
-                                View master's thesis
+                                Consultar trabajo de grado
                                 <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
@@ -491,309 +525,501 @@
 
         </div>
     </section>
-    
 
 
 
     </section>
-    <!-- Experience Timeline -->
+
+    <!-- 5. Carrera profesional -->
     <section id="experiencia" class="py-16 bg-slate-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-900">Professional Career</h2>
+                <h2 class="text-3xl font-bold text-slate-900">Carrera profesional</h2>
+                <p class="text-slate-500 mt-3">
+                    Experiencia relacionada a la consultoría especializada e investigación y desarrollo de soluciones tecnológicas.
+                </p>
             </div>
 
             <div class="relative timeline-line space-y-12">
-                
-                <!-- Role 1: Current -->
+
+                <!-- Experiencia 1: JAM Consulting -->
                 <div class="relative pl-12 group">
                     <div class="absolute left-3 top-2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-sm z-10 group-hover:scale-125 transition"></div>
+
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:border-blue-300 transition">
-                        <div class="flex flex-col md:flex-row justify-between mb-2">
-                            <h3 class="text-xl font-bold text-slate-800">AI Prompt Specialist & Model Optimizer</h3>
-                            <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full w-fit">2025 - Present</span>
+
+                        <div class="flex flex-col md:flex-row justify-between mb-2 gap-2">
+                            <h3 class="text-xl font-bold text-slate-800">
+                                Consultor de Ingeniería de IA y Evaluación de LLMs
+                            </h3>
+                            <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full w-fit">
+                                Ene 2025 - Actualidad
+                            </span>
                         </div>
-                        <p class="text-slate-500 font-medium mb-3">Remote Contractor</p>
+
+                        <p class="text-slate-500 font-medium mb-1">
+                            JAM Consulting S.A.
+                        </p>
+                        <p class="text-slate-400 text-sm mb-3">
+                            Panamá · Proyecto por contrato · Modalidad remota
+                        </p>
+
                         <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm">
-                            <li>Refinement of complex prompt architectures for LLMs, ensuring logical consistency and technical accuracy.</li>
-                            <li>Architecting Chain-of-Thought (CoT) workflows for AI Agents to enhance complex reasoning.</li>
-                            <li>Evaluating and auditing model outputs against domain-specific knowledge to mitigate hallucinations.</li>
+                            <li>Desarrollo de entregables especializados para el refinamiento de arquitecturas complejas de prompts en modelos de lenguaje de gran escala (LLMs), optimizando la consistencia lógica y la precisión de sus respuestas.</li>
+                            <li>Estructuración y auditoría de registros de razonamiento secuencial para orientar agentes de Inteligencia Artificial en tareas especializadas de múltiples pasos.</li>
+                            <li>Validación técnica y control de calidad de respuestas generadas por modelos, contrastándolas con conocimiento experto del dominio para mitigar alucinaciones en entornos de producción.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Role 2: Parquetropolis -->
+                <!-- Experiencia 2: Parquetropolis -->
                 <div class="relative pl-12 group">
                     <div class="absolute left-3 top-2 w-4 h-4 bg-violet-600 rounded-full border-4 border-white shadow-sm z-10 group-hover:scale-125 transition"></div>
+
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:border-violet-300 transition">
-                        <div class="flex flex-col md:flex-row justify-between mb-2">
-                            <h3 class="text-xl font-bold text-slate-800">Founder & Director (Lead AI Developer)</h3>
-                            <span class="text-sm font-semibold text-violet-600 bg-violet-50 px-3 py-1 rounded-full w-fit">2018 - Present</span>
+
+                        <div class="flex flex-col md:flex-row justify-between mb-2 gap-2">
+                            <h3 class="text-xl font-bold text-slate-800">
+                                Ingeniero de IA e Investigador de Tecnología en Salud y Educación
+                            </h3>
+                            <span class="text-sm font-semibold text-violet-600 bg-violet-50 px-3 py-1 rounded-full w-fit">
+                                2018 - Actualidad
+                            </span>
                         </div>
-                        <p class="text-slate-500 font-medium mb-3">Parquetrópolis (Bogotá)</p>
+
+                        <p class="text-slate-500 font-medium mb-1">
+                            Parquetropolis de Colombia S.A.S.
+                        </p>
+                        <p class="text-slate-400 text-sm mb-3">
+                            Bogotá, Colombia · Investigación y Desarrollo · Modalidad asíncrona
+                        </p>
+
+                        <p class="text-slate-600 text-sm mb-4">
+                            Iniciativa tecnológica con impacto social enfocada en la aplicación de ingeniería y ciencia de datos para desarrollar herramientas de apoyo educativo dirigidas a niños con neurodiversidad.
+                        </p>
+
                         <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm">
-                            <li>Directing R&D for <strong>TEOplay:</strong> Implementing data-driven pedagogical frameworks using Python.using Python.</li>
-                            <li>Developing immersive VR/AR therapeutic environments using Unity 3D and C#.</li>
-                            <li>Leveraging predictive analytics to bridge the gap between clinical observation and school inclusion.</li>
+                            <li><strong>Liderazgo en I+D de TEOplay:</strong> Desarrollo de un ecosistema de apoyo neuroeducativo basado en Inteligencia Artificial, que integra información de familias, docentes y profesionales de la salud para estructurar perfiles neuroeducativos dinámicos en seis dimensiones del desarrollo.</li>
+
+                            <li><strong>Modelado adaptativo y análisis cualitativo:</strong> Diseño de algoritmos para adaptar contenidos académicos a las necesidades del usuario y analizar cualitativamente su desenvolvimiento, incorporando la retroalimentación al perfil neuroeducativo.</li>
+
+                            <li><strong>Motor de IA con retroalimentación especializada:</strong> Integración e interpretación de observaciones de especialistas de la salud y del entorno educativo y familiar, para generar hojas de ruta de trabajo personalizadas en los contextos terapéutico, escolar y familiar.</li>
+
+                            <li><strong>Pipelines de datos e infraestructura:</strong> Estructuración de flujos de procesamiento eficientes y reutilizables mediante Polars y NumPy para el manejo de registros clínicos y pedagógicos.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Role 3: Epachamo -->
-                <div class="relative pl-12 group">
-                    <div class="absolute left-3 top-2 w-4 h-4 bg-slate-400 rounded-full border-4 border-white shadow-sm z-10 group-hover:scale-125 transition"></div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 opacity-80 hover:opacity-100 transition">
-                        <div class="flex flex-col md:flex-row justify-between mb-2">
-                            <h3 class="text-lg font-bold text-slate-700">Founder & CEO</h3>
-                            <span class="text-sm text-slate-500">2005 - 2018</span>
-                        </div>
-                        <p class="text-slate-500 font-medium mb-1">Grupo Epachamo SAS</p>
-                        <p class="text-slate-600 text-sm">I led high-impact technological infrastructure projects and implemented solutions for optimizing multifunctional processes.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Skills & Education Grid -->
+
+    <!-- 6. Formación y actualización profesional -->
     <section id="skills" class="py-16 bg-white border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-1 gap-12">
-                
-                <!-- Education Column -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
-                        <span class="text-2xl mr-2">🎓</span> Education & Certifications
-                    </h3>
-                    
-                    <div class="space-y-6">
-                        <!-- Stanford ML -->
-                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
-                            <div class="flex justify-between items-start mb-2">
-                                <div>
-                                    <h4 class="font-bold text-slate-800">Stanford University (Coursera)</h4>
-                                    <p class="text-sm text-slate-500">Machine Learning Specialization</p>
-                                </div>
-                                <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">COMPLETED 2025</span>
-                            </div>
-                            <div class="w-full bg-slate-200 rounded-full h-2.5 mt-2">
-                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
-                            </div>
-                            <p class="text-xs text-slate-500 mt-2">Supervised Learning, Neural Networks, Reinforcement Learning.</p>
-                        </div>
 
-                        <!-- Stanford AI Health -->
-                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
-                            <div class="flex justify-between items-start mb-2">
-                                <div>
-                                    <h4 class="font-bold text-slate-800">Stanford University (Coursera)</h4>
-                                    <p class="text-sm text-slate-500">AI in Healthcare Specialization</p>
-                                </div>
-                                <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">IN PROGRESS (2026)</span>
-                            </div>
-                            <div class="w-full bg-slate-200 rounded-full h-2.5 mt-2">
-                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 45%"></div>
-                            </div>
-                        </div>
+            <!-- Encabezado -->
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold tracking-wider text-blue-600 uppercase">
+                    Aprendizaje continuo
+                </span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">
+                    Formación y actualización profesional
+                </h2>
+                <p class="text-slate-500 mt-3 max-w-2xl mx-auto">
+                    Formación complementaria y actualización permanente en inteligencia artificial,
+                    informática médica, neurociencias y tecnologías aplicadas.
+                </p>
+            </div>
 
-                        <!-- MSc -->
-                        <div class="flex items-start p-4 border-l-2 border-slate-300 pl-4">
-                            <div>
-                                <h4 class="font-bold text-slate-700">MSc in Biomedical Engineering</h4>
-                                <p class="text-sm text-slate-500">Universidad del Rosario / Esc. Col. de Ingeniería (2020)</p>
-                                <p class="text-xs text-slate-400 mt-1">Focus: Neurodevelopmental Disorders & Assistive Tech.</p>
-                            </div>
-                        </div>
+            <!-- ÁREA 1: IA aplicada a la salud -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                        <i class="fas fa-brain text-blue-600 text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800">
+                            Inteligencia artificial aplicada a la salud
+                        </h3>
+                        <p class="text-sm text-slate-500">Machine Learning e IA generativa</p>
                     </div>
                 </div>
 
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+
+                    <!-- AI for Medicine -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-heartbeat text-blue-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded-full">
+                                En curso · 2026
+                            </span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            AI for Medicine Specialization
+                        </h4>
+                        <p class="text-sm font-medium text-blue-700 mb-3">
+                            DeepLearning.AI
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Aplicación de aprendizaje automático y profundo a problemas médicos,
+                            incluyendo diagnóstico, pronóstico y toma de decisiones terapéuticas.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">
+                            Especialización
+                        </span>
+                    </div>
+
+                    <!-- IA Generativa en Salud -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-robot text-blue-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">
+                                2026
+                            </span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Introducción a la IA Generativa y su aplicación en salud
+                        </h4>
+                        <p class="text-sm font-medium text-blue-700 mb-3">
+                            Hospital Italiano de Buenos Aires
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Fundamentos de IA generativa y exploración de sus aplicaciones en
+                            procesos asistenciales, gestión de información y servicios de salud.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">
+                            Curso
+                        </span>
+                    </div>
+
+                    <!-- Machine Learning -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-network-wired text-blue-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">
+                                2025
+                            </span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Machine Learning Specialization
+                        </h4>
+                        <p class="text-sm font-medium text-blue-700 mb-3">
+                            Stanford University · Andrew Ng · Coursera
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Fundamentos de aprendizaje supervisado y no supervisado, redes neuronales,
+                            árboles de decisión y desarrollo de modelos de aprendizaje automático.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">
+                            Especialización
+                        </span>
+                    </div>
+
+                    <!-- Neural Networks -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-project-diagram text-blue-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">
+                                2023
+                            </span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Neural Networks and Artificial Intelligence
+                        </h4>
+                        <p class="text-sm font-medium text-blue-700 mb-3">
+                            P4H Bionic · México
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Introducción a las redes neuronales, sus fundamentos y los modelos
+                            de inteligencia artificial y sus aplicaciones tecnológicas.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">
+                            Curso
+                        </span>
+                    </div>
+
+                </div>
             </div>
+
+            <!-- ÁREA 2: Informática médica -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center">
+                        <i class="fas fa-hospital text-teal-600 text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800">
+                            Informática médica e interoperabilidad sanitaria
+                        </h3>
+                        <p class="text-sm text-slate-500">Sistemas de información y estándares sanitarios</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+
+                    <!-- Health Informatics -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-teal-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center">
+                                <i class="fas fa-notes-medical text-teal-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded-full">
+                                En curso · 2026
+                            </span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Intro to Health Informatics and Health Information Systems
+                        </h4>
+                        <p class="text-sm font-medium text-teal-700 mb-3">
+                            Northeastern University · Coursera
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Fundamentos de informática en salud, historias clínicas electrónicas,
+                            gestión de datos sanitarios e introducción a estándares de interoperabilidad
+                            como HL7, FHIR y DICOM.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">
+                            Curso
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ÁREA 3: Neurociencias -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-violet-50 flex items-center justify-center">
+                        <i class="fas fa-head-side-virus text-violet-600 text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800">
+                            Neurociencias, neuropsicología y tecnologías biónicas
+                        </h3>
+                        <p class="text-sm text-slate-500">Neurodesarrollo, aprendizaje y diseño tecnológico</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+
+                    <!-- Funciones ejecutivas -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                                <i class="fas fa-brain text-violet-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">2025</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Neuropsicología de procesos ejecutivos y autorregulación
+                        </h4>
+                        <p class="text-sm font-medium text-violet-700 mb-3">CLEV</p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Estudio de las funciones ejecutivas, el control cognitivo y los procesos
+                            de autorregulación relacionados con el comportamiento y el aprendizaje.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Diplomado</span>
+                    </div>
+
+                    <!-- Neurodidáctica -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                                <i class="fas fa-book-open text-violet-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">2025</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Neuropsicología en Educación y Neurodidáctica
+                        </h4>
+                        <p class="text-sm font-medium text-violet-700 mb-3">CLEV</p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Relación entre los procesos neuropsicológicos y el aprendizaje,
+                            con fundamentos para comprender y orientar estrategias educativas.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Diplomado</span>
+                    </div>
+
+                    <!-- Integración sensorial -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                                <i class="fas fa-hand-sparkles text-violet-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">2023</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Integración Sensorial en Autismo y TDAH
+                        </h4>
+                        <p class="text-sm font-medium text-violet-700 mb-3">CIL</p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Procesamiento sensorial y sus manifestaciones en personas con autismo
+                            y TDAH, incluyendo fundamentos de integración y modulación sensorial.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Diplomado</span>
+                    </div>
+
+                    <!-- Trastornos del neurodesarrollo -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                                <i class="fas fa-puzzle-piece text-violet-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">2023</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Autismo y otros Trastornos del Neurodesarrollo
+                        </h4>
+                        <p class="text-sm font-medium text-violet-700 mb-3">CIL</p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Características del neurodesarrollo, perfiles de funcionamiento y
+                            aspectos cognitivos, conductuales y de aprendizaje asociados.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Diplomado</span>
+                    </div>
+
+                    <!-- Exoesqueletos -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                                <i class="fas fa-robot text-violet-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">2023</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            3D Bionic Exoskeletons & Bio-organic Design
+                        </h4>
+                        <p class="text-sm font-medium text-violet-700 mb-3">P4H Bionic · México</p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Diseño biónico y desarrollo de estructuras biomecánicas tridimensionales,
+                            integrando principios de ingeniería, anatomía y modelado digital.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Curso</span>
+                    </div>
+
+                    <!-- Diplomado Neurociencias -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                                <i class="fas fa-microscope text-violet-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">2021</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Diplomado en Neurociencias
+                        </h4>
+                        <p class="text-sm font-medium text-violet-700 mb-3">Universidad El Bosque</p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Fundamentos de neurociencia, organización y funcionamiento del sistema
+                            nervioso y su relación con los procesos cognitivos y conductuales.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Diplomado</span>
+                    </div>
+
+                    <!-- Lenguaje y aprendizaje -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center">
+                                <i class="fas fa-comments text-violet-600 text-lg"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-600 bg-slate-200 px-2 py-1 rounded-full">2021</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 mb-1">
+                            Neuropsicología de los trastornos del lenguaje y el aprendizaje
+                        </h4>
+                        <p class="text-sm font-medium text-violet-700 mb-3">Universidad del Rosario</p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Bases neuropsicológicas del lenguaje y el aprendizaje, y aproximación
+                            a las alteraciones que pueden afectar estos procesos.
+                        </p>
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wide">Diplomado</span>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
-<!-- Sección Personal -->
-        <section id="personal" class="max-w-6xl mx-auto px-6 py-12">
-            <div class="mb-12">
-                <h2 class="text-3xl font-bold text-slate-900">About me</h2>
-                <p class="text-slate-500 mt-2">Beyond the Professional.</p>
-            </div>
 
-            <div class="grid md:grid-cols-1 gap-6">
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm card-hover flex flex-col md:flex-row items-center gap-8">
-                    <!-- Contenedor de imagen pequeño y controlado -->
-                    <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 bg-slate-50 rounded-2xl overflow-hidden shadow-inner border border-slate-100">
-                        <img src="assets/foto1.jpg" alt="Luis Guillermo" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                    </div>
-                    
-                    <!-- Información General -->
-                    <div class="text-center md:text-left flex-grow">
-                        <h3 class="font-bold text-slate-900 mb-1">Born in Caracas, Venezuela • 01/03/1980</h3>
-                        <h4 class="font-semibold text-slate-600 mb-3 text-sm uppercase tracking-wide">Based in Bogotá D.C., Colombia since 2017</h4>
-                        <div class="space-y-1.5">
-                            <p class="text-slate-600 flex items-center justify-center md:justify-start gap-2">
-                                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                                I have 2 children
-                            </p>
-                            <p class="text-slate-600 flex items-center justify-center md:justify-start gap-2 text-balance">
-                                <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>                                
-				I love tech, neuroscience and martial arts
-                            </p>
-                            <p class="text-slate-400 text-sm mt-4 font-mono">
-				Committed to constant learning and innovation.
-                            </p>
-
-                        </div>
-                    </div>
-
-                    <!-- Botón de Descarga HV -->
-                    <div class="mt-6 md:mt-0 md:ml-auto">
-                        <a href="assets/HV-LGRS-ENG (2026).pdf" download class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-slate-200 active:scale-95 group">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                            <span class="font-semibold">Download my resume (PDF)</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-    <!-- Footer -->
-
-	<section id="contacto" class="py-16 bg-slate-50 border-t border-slate-200 py-20">
+    
+    <!-- 7. Contacto -->
+    <section id="contacto" class="bg-slate-50 border-t border-slate-200 py-20">
 
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold text-slate-900 mb-8 tracking-tight">Are we talking about Neuro-AI?</h2>
+
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-8 tracking-tight">
+                <span class="material-symbols-outlined">⚙️</span>
+                Conectemos
+            </h2>
+
             <p class="text-slate-500 max-w-2xl mx-auto mb-12 text-lg leading-relaxed">
-                Available for strategic roles in AI Data Engineering, Biomedical Development, and EdTech Consulting for Neurodiversity.
+                Abierto a oportunidades profesionales y colaboraciones en Inteligencia Artificial aplicada a la salud, la neuroeducación y las tecnologías de asistencia.
             </p>
 
+            <!-- Canales de contacto -->
+            <div class="flex flex-wrap justify-center gap-6 mb-10">
 
-
-            <div class="flex flex-wrap justify-center gap-6 mb-16">
-                <a href="mailto:luisguillermo80@gmail.com" class="flex items-center gap-3 px-10 py-5 bg-white border border-slate-200 text-slate-700 rounded-3xl hover:border-blue-600 transition-all shadow-sm">
-                    luisguillermo80@gmail.com		
+                <a href="mailto:luisguillermo80@gmail.com"
+                class="flex items-center gap-3 px-8 py-5 bg-white border border-slate-200 text-slate-700 rounded-2xl hover:border-blue-600 transition-all shadow-sm">
+                    <span class="material-symbols-outlined">📧</span>
+                    luisguillermo80@gmail.com
                 </a>
-                <a href="https://www.linkedin.com/in/lgrs/" class="flex items-center gap-3 px-10 py-5 bg-white border border-slate-200 text-slate-700 rounded-3xl hover:border-blue-600 transition-all shadow-sm">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-6 h-6" alt="LinkedIn">
+
+                <a href="https://www.linkedin.com/in/lgrs/"
+                target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-3 px-8 py-5 bg-white border border-slate-200 text-slate-700 rounded-2xl hover:border-blue-600 transition-all shadow-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                        class="w-6 h-6" alt="LinkedIn">
                     LinkedIn
                 </a>
-                <a href="https://wa.link/6k2br9" class="flex items-center gap-3 px-10 py-5 bg-white border border-slate-200 text-slate-700 rounded-3xl hover:border-blue-600 transition-all shadow-sm">
-		    <span class="material-symbols-outlined">📞</span>
+
+                <a href="https://wa.link/6k2br9"
+                target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-3 px-8 py-5 bg-white border border-slate-200 text-slate-700 rounded-2xl hover:border-blue-600 transition-all shadow-sm">
+                    <span class="material-symbols-outlined">📞</span>
                     +57 320-8631969
                 </a>
+
             </div>
-            <div class="text-slate-400 text-[16px] font-bold tracking-[0.4em] uppercase">
-                Bogotá D.C. | Colombia
-	    
+
+            <!-- Hoja de vida -->
+            <div class="mb-14">
+                <a href="assets/HV-LGRS-ENG (2026).pdf"
+                download
+                class="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-slate-300 active:scale-95">
+
+                    <span class="material-symbols-outlined">🔽</span>
+                    <span class="font-semibold">Descargar hoja de vida (PDF)</span>
+
+                </a>
             </div>
-	    <p>      </p>	
-            <div class="text-slate-400 text-[10px] font-bold tracking-[0.4em] uppercase">
-                © 2026 LUIS GUILLERMO RAMIREZ SEMECO • Neuroscience &amp; Technology
+
+            <!-- Ubicación -->
+            <div class="text-slate-400 text-sm font-semibold tracking-widest uppercase mb-8">
+                Bogotá D.C. · Colombia
             </div>
+
+            <!-- Copyright -->
+            <div class="text-slate-400 text-[10px] font-bold tracking-[0.3em] uppercase">
+                © 2026 LUIS GUILLERMO RAMIREZ SEMECO
+                <span class="mx-2">•</span>
+                Inteligencia Artificial, Neurociencias y Tecnología
+            </div>
+
         </div>
     </section>
-
-    <!-- JavaScript Logic -->
-    <script>
-        // Data Configuration based on Luis's CV
-        const radarData = {
-            labels: ['Ingeniería de Software', 'Neurociencia/Biomédica', 'Machine Learning/IA', 'Análisis de Datos', 'Gestión de Proyectos'],
-            datasets: [{
-                label: 'Nivel de Competencia',
-                data: [90, 85, 80, 85, 95], // Values estimated from "Senior" roles and recent certifications
-                fill: true,
-                backgroundColor: 'rgba(37, 99, 235, 0.2)',
-                borderColor: 'rgb(37, 99, 235)',
-                pointBackgroundColor: 'rgb(37, 99, 235)',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgb(37, 99, 235)'
-            }]
-        };
-
-        const barData = {
-            labels: ['Python (Pandas/NumPy)', 'Unity 3D/C#', 'SQL', 'Prompt Eng./RLHF', 'Herramientas Biónicas'],
-            datasets: [{
-                label: 'Dominio Técnico',
-                data: [85, 90, 75, 95, 70],
-                backgroundColor: [
-                    'rgba(16, 185, 129, 0.7)',
-                    'rgba(139, 92, 246, 0.7)',
-                    'rgba(100, 116, 139, 0.7)',
-                    'rgba(37, 99, 235, 0.7)',
-                    'rgba(249, 115, 22, 0.7)'
-                ],
-                borderColor: [
-                    'rgb(16, 185, 129)',
-                    'rgb(139, 92, 246)',
-                    'rgb(100, 116, 139)',
-                    'rgb(37, 99, 235)',
-                    'rgb(249, 115, 22)'
-                ],
-                borderWidth: 1
-            }]
-        };
-
-        // Render Charts on Load
-        window.addEventListener('DOMContentLoaded', () => {
-            // 1. Radar Chart
-            const ctxRadar = document.getElementById('skillRadar').getContext('2d');
-            new Chart(ctxRadar, {
-                type: 'radar',
-                data: radarData,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            angleLines: { color: '#E2E8F0' },
-                            grid: { color: '#E2E8F0' },
-                            pointLabels: {
-                                font: { size: 11, family: "'Inter', sans-serif" },
-                                color: '#475569'
-                            },
-                            suggestedMin: 0,
-                            suggestedMax: 100
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false }
-                    }
-                }
-            });
-
-            // 2. Bar Chart (Tech Stack)
-            const ctxBar = document.getElementById('techStackChart').getContext('2d');
-            new Chart(ctxBar, {
-                type: 'bar',
-                data: barData,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    indexAxis: 'y', // Horizontal bar for better readability of text labels
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            max: 100,
-                            grid: { display: false }
-                        },
-                        y: {
-                            grid: { display: false },
-                            ticks: { font: { family: "'JetBrains Mono', monospace" } }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false }
-                    }
-                }
-            });
-        });
-    </script>
-    
-    <!-- CONFIRMATION: NO SVG graphics used directly in HTML (Chart.js uses Canvas). NO Mermaid JS used. Single file output. -->
 
 
 </body>
